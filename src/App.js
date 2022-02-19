@@ -44,13 +44,13 @@ class App extends Component {
             onLeaveFeedback={this.handleClick}
           />
           <Section title="Statistics">
-            {good > 0 || neutral > 0 || bad > 0 ? (
+            {countTotalFeedback() ? (
               <Statistics
                 good={good}
                 neutral={neutral}
                 bad={bad}
-                total={countTotalFeedback}
-                positivePercentage={countPositiveFeedbackPercentage}
+                total={countTotalFeedback()}
+                positivePercentage={countPositiveFeedbackPercentage()}
               />
             ) : (
               <Notification message="No feedback given" />
