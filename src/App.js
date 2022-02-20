@@ -13,10 +13,8 @@ class App extends Component {
   };
 
   handleClick = buttonName => {
-    const name = buttonName.toLowerCase();
-
     this.setState(prevState => {
-      return { [name]: prevState[name] + 1 };
+      return { [buttonName]: prevState[buttonName] + 1 };
     });
   };
 
