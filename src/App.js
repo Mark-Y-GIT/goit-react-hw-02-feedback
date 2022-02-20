@@ -12,8 +12,8 @@ class App extends Component {
     bad: 0,
   };
 
-  handleClick = event => {
-    const name = event.currentTarget.name.toLowerCase();
+  handleClick = buttonName => {
+    const name = buttonName.toLowerCase();
 
     this.setState(prevState => {
       return { [name]: prevState[name] + 1 };
@@ -40,7 +40,7 @@ class App extends Component {
       <div className="wraper">
         <Section title="Please leave a feedback">
           <FeedbackOptions
-            options={['Good', 'Neutral', 'Bad']}
+            options={['good', 'neutral', 'bad']}
             onLeaveFeedback={this.handleClick}
           />
           <Section title="Statistics">
